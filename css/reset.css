@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+input {
+  outline: none;
+}
+
+:root {
+  --light-yellow: #deb37e;
+  --yellow: #e2a355;
+  --brown: #7f7770;
+  --text-brown: #54524f;
+  --text-button-brown: #776c64;
+  --search: #c3bfbc;
+  --white: #ffffff;
+}
