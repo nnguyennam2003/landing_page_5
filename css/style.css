@@ -41,6 +41,7 @@ html {
   width: 100%;
   max-width: 1260px;
   margin: 0 auto;
+  height: 100%;
 }
 
 /* header style */
@@ -48,9 +49,7 @@ html {
   width: 100%;
   height: 196px;
   padding-top: 29px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 9999;
 }
 
@@ -119,6 +118,12 @@ html {
 
 .header_burger {
   display: none;
+}
+
+/* main style */
+.main {
+  margin-top: -196px;
+  position: relative;
 }
 
 /* hero style */
@@ -214,10 +219,28 @@ html {
   line-height: 1.2;
 }
 
-/* Menu */
+/* menu style */
 .menu_section {
   width: 100%;
   z-index: 2;
+  position: relative;
+  padding-bottom: 183px;
+  overflow: hidden;
+}
+
+.menu_section::before {
+  position: absolute;
+  bottom: 26px;
+  left: -342px;
+  content: "";
+  display: block;
+  width: 876px;
+  height: 512px;
+  background-image: url("../assets/images/hiking.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.48;
+  z-index: 3;
 }
 
 .menu_title {
@@ -262,6 +285,7 @@ html {
 .menu_item .item_wrapper .item_image {
   width: 100%;
   height: 301px;
+  min-height: 301px;
 }
 
 .menu_item .item_wrapper .item_image img {
@@ -283,7 +307,443 @@ html {
 }
 
 .menu_item .item_wrapper .item_content .description {
-  /* font-size: 22.92px; */
+  font-size: 22.92px;
+  margin-top: 10px;
+}
+
+.menu_button_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+}
+
+.menu_button_wrapper .menu_button {
+  width: 335px;
+  height: 75px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brown);
+  font-size: 23.15px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* featured style */
+.featured_section {
+  width: 100%;
+}
+
+.featured_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured_top,
+.featured_bottom {
+  display: flex;
+  height: 780px;
+}
+
+.featured_bottom {
+  flex-direction: row-reverse;
+}
+
+.featured_image,
+.featured_content {
+  width: 50%;
+}
+
+.featured_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 100%;
+}
+
+.featured_bottom .featured_image img {
+  object-position: 100% 100%;
+}
+
+.featured_top .featured_content {
+  background-color: var(--brown);
+}
+
+.featured_bottom .featured_content {
+  background-color: var(--light-yellow);
+}
+
+.featured_top .featured_content,
+.featured_bottom .featured_content {
+  color: var(--white);
+  padding: 0 90px;
+}
+
+.featured_top .featured_content {
+  padding-left: 96px;
+}
+
+.featured_content .title {
+  margin-top: 186px;
+  font-size: 58.33px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.featured_content .title span {
+  text-wrap: nowrap;
+}
+
+.featured_content .description {
+  margin-top: 35px;
+  font-size: 29.17px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.featured_content .featured_button {
+  width: 334px;
+  height: 75px;
+  border-radius: 40px;
+  background-color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 55px;
+  font-size: 29.17px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* explore style */
+.explore_section {
+  position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.explore_shape_top {
+  width: 100%;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+}
+
+.explore_shape_center {
+  width: 100%;
+  position: absolute;
+  top: 708px;
+  left: 0;
+  right: 0;
+}
+
+.explore_shape_bottom {
+  width: 100%;
+  position: absolute;
+  bottom: -48px;
+  left: 0;
+  right: 0;
+}
+
+.explore_shape_top img,
+.explore_shape_center img,
+.explore_shape_bottom img {
+  width: 100%;
+  height: auto;
+}
+
+.explore_header {
+  width: 100%;
+  background-color: var(--brown);
+  color: var(--white);
+  text-align: center;
+  height: 765px;
+  padding-top: 354px;
+}
+
+.explore_section::after {
+  position: absolute;
+  top: 160px;
+  left: -332px;
+  content: "";
+  display: block;
+  width: 876px;
+  height: 512px;
+  background-image: url("../assets/images/hiking.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.48;
+  z-index: 3;
+}
+
+.explore_header .title {
+  font-size: 58.33px;
+  font-weight: 600;
+  padding-left: 32px;
+}
+
+.explore_header .description {
+  font-size: 29.17px;
+  font-weight: 400;
+  max-width: 920px;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+  margin-top: 32px;
+  line-height: 1.2;
+}
+
+.explore_main {
+  width: 100%;
+  height: 1114px;
+  background: url("../assets/images/explore.png") no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.explore_banner {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.explore_banner .title {
+  line-height: 1.2;
+  font-size: 83.33px;
+  font-style: italic;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: right;
+  color: var(--text-brown);
+  letter-spacing: 0.02em;
+  text-shadow: 2.4px -4.3px 5px rgba(84, 82, 79, 0.36);
+}
+
+.explore_banner .title span {
+  letter-spacing: 0;
+  color: var(--yellow);
+  font-size: 75px;
+  font-size: 78.295px;
+}
+
+/* story style */
+.story_section {
+  padding-top: 55px;
+}
+
+.story_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
+}
+
+.story_list .item {
+  max-width: 332px;
+}
+
+.story_list .item .title {
+  font-size: 33.33px;
+  color: var(--light-yellow);
+}
+
+.story_list .item .description {
+  font-size: 18.75px;
+  color: #333d42;
+  margin-top: 20px;
+}
+
+.story_quote {
+  margin-top: 259px;
+  text-align: center;
+}
+
+.story_quote > h3 {
+  font-size: 100px;
+  font-weight: bold;
+  padding-right: 50px;
+  line-height: 0.5;
+}
+
+.story_quote {
+  color: #3f3f3f;
+}
+
+.story_quote .quote {
+  width: 813px;
+  margin: 0 auto;
+}
+
+.story_quote .quote .quote_text {
+  margin-top: 8px;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.story_quote .quote .quote_author {
+  display: block;
+  margin-top: 50px;
+  font-size: 20.83px;
+  font-weight: bold;
+  font-style: normal;
+  padding-right: 50px;
+}
+
+/* contact style */
+.contact_section {
+  width: 100%;
+  height: 890px;
+  background-color: var(--yellow);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.contact_shape_top {
+  width: 100%;
+  position: absolute;
+  top: -44px;
+  left: 0;
+  right: 0;
+}
+
+.contact_shape_top img {
+  width: 100%;
+  height: auto;
+}
+
+.contact_wrapper {
+  text-align: center;
+  margin-top: 307px;
+}
+
+.contact_wrapper .title {
+  font-size: 75px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.contact_wrapper .description {
+  width: 924px;
+  margin: 0 auto;
+  font-size: 29.72px;
+  color: var(--text-brown);
+  margin-top: 42px;
+  line-height: 1.2;
+}
+
+.contact_form {
+  position: relative;
+  width: 770px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.contact_form input {
+  width: 100%;
+  height: 63px;
+  font-size: 25px;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  padding: 0 240px 0 40px;
+  color: var(--text-brown);
+}
+
+.contact_form .contact_button {
+  position: absolute;
+  background-color: var(--text-brown);
+  width: 222px;
+  height: 63px;
+  border-radius: 40px;
+  right: 0;
+  top: 0;
+}
+
+.contact_form .contact_button span {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+/* footer style */
+.footer {
+  position: relative;
+  background-color: var(--brown);
+}
+
+.footer_shape {
+  width: 100%;
+  position: absolute;
+  top: -88px;
+  left: 0;
+  right: 0;
+}
+
+.footer_shape img {
+  width: 100%;
+  height: auto;
+}
+
+.footer_wrapper {
+  display: flex;
+  padding-top: 338px;
+  padding-bottom: 237px;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.footer_wrapper h3 {
+  font-size: 31.6px;
+  font-weight: 400;
+}
+
+.footer_right_wrapper {
+  display: flex;
+  gap: 60px;
+}
+
+.footer_contact {
+  width: 463px;
+}
+
+.footer_contact > p {
+  font-size: 23.7px;
+  font-weight: 400;
+  margin-top: 22px;
+  line-height: 1.2;
+}
+
+.footer_social {
+  margin-top: 38px;
+  display: flex;
+  gap: 16px;
+}
+
+.footer_other,
+.footer_about,
+.footer_services {
+  width: fit-content;
+}
+
+.footer_links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 23.7px;
+  font-weight: 400;
+  gap: 10px;
+}
+
+.footer_social > li > a > img {
+  width: 42px;
+  height: auto;
 }
